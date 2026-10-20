@@ -13,43 +13,77 @@
 </head>
 <body>
   <h1>탭리플(TabRipple) 고객 지원</h1>
-  <p>탭리플은 iPhone용 웹 브라우저입니다. 앱 개발자(리플하우스)는 서버를 운영하지 않고, 회원가입도 없으며, 사용자의 개인정보를 수집하지 않습니다.</p>
+  <p>탭리플은 iPhone용 iOS 앱과 Android 앱으로 제공되는 웹 브라우저입니다. 앱 개발자인 리플하우스(RippleHouse)는 서버를 운영하지 않고, 회원가입도 없으며, 사용자의 개인정보를 수집하지 않습니다.</p>
   <p>문의: <a href="mailto:support@ripplehouse.kr">support@ripplehouse.kr</a> · <a href="./">개인정보 처리방침</a></p>
 
   <h2>자주 묻는 질문</h2>
 
-  <h3>다른 브라우저의 암호를 가져오려면 어떻게 하나요?</h3>
-  <p>가져오기 마법사에서 암호 CSV 파일을 고르고 "암호도 가져오기"를 선택하세요. 암호 파일은 이 선택을 한 경우에만 읽으며, 가져온 뒤에는 평문 파일을 지우도록 안내합니다. 앱이 받은 파일은 가져오기가 끝나면 지워지고, 가져온 내용은 개발자에게 전송되지 않습니다.</p>
-
   <h3>구글 드라이브 동기화를 끊으려면 어떻게 하나요?</h3>
   <p>설정 › 기기 간 동기화에서 "연결 끊기"를 누르면 이 기기만 연결이 끊기고, 드라이브의 앱 폴더 내용은 다른 기기가 계속 쓸 수 있도록 남습니다. "동기화 데이터 지우기"를 누르면 Google 드라이브의 앱 전용 폴더 내용을 모두 지우고 Google 계정에 준 앱 연결 허락도 해지합니다. Google 계정 설정의 "타사 앱 및 서비스"에서도 연결을 해제할 수 있습니다.</p>
+  <p>연결 방식은 플랫폼마다 다릅니다. iOS는 로그인 토큰이 기기 키체인에 저장되고, 앱을 삭제해도 남을 수 있으므로 지우려면 삭제 전에 "동기화 데이터 지우기"를 누르세요. Android는 Google Play 서비스가 로그인을 맡고 앱은 리프레시 토큰을 보관하지 않으며, 연결한 계정 표시만 기기에 남습니다.</p>
 
   <h3>비공개 탭에서는 무엇이 남지 않나요?</h3>
-  <p>비공개 탭에서 본 페이지는 탭 세션, 보관함, 방문 기록, 다운로드 목록, 동기화에 남지 않고, 암호 저장도 제안하지 않습니다. 검색어 제안도 보내지 않습니다. 마지막 비공개 탭을 닫으면 그 탭들의 쿠키와 사이트 데이터가 지워집니다.</p>
+  <p>비공개 탭에서 본 페이지는 탭 세션, 보관함, 방문 기록, 다운로드 목록, 동기화에 남지 않습니다. 검색어 제안도 보내지 않습니다. 마지막 비공개 탭을 닫으면 그 탭들의 쿠키와 사이트 데이터가 지워집니다.</p>
+  <p>Android에서는 비공개 세션마다 별도의 WebView 프로필을 새로 만들고, 마지막 비공개 탭을 닫으면 그 프로필의 쿠키·사이트 저장소·위치 허용과 비공개 다운로드 폴더를 지웁니다. 비공개 탭이 보이는 동안에는 최근 앱 화면과 스크린샷에 내용이 나타나지 않습니다. 비공개 탭에서 고른 사이트 권한·텍스트 크기·차단 예외도 저장하지 않습니다. Android WebView가 별도 프로필을 지원하지 않는 기기에서는 비공개 탭을 열 수 없다는 안내가 나옵니다(WebView 업데이트로 해결될 수 있습니다).</p>
+
+  <h3>저장한 암호는 어디에 있나요?</h3>
+  <p>iOS에서는 앱이 저장한 암호가 iOS 키체인에 있고, 설정 › 암호에서 보고 지울 수 있습니다. "iCloud 키체인으로 기기 간 동기화"를 켜 두면(기본 켬) 같은 Apple 계정의 기기로 종단간 암호화되어 동기화됩니다.</p>
+  <p>Android에서는 앱이 암호를 저장하지 않습니다. 사이트 로그인 입력란의 저장과 자동 입력은 안드로이드 자동 완성 서비스가 맡습니다. 앱의 설정 › 암호 › "자동 완성 서비스"를 누르면 그 서비스 설정 화면으로 이동합니다. 저장된 로그인을 확인하거나 지우려면 그 서비스(예: Google 비밀번호 관리자)에서 하세요. Android판은 다른 브라우저의 암호 CSV를 가져오지 않습니다.</p>
+
+  <h3>다른 브라우저의 북마크·방문 기록을 가져오려면 어떻게 하나요?</h3>
+  <p>설정 › 북마크 및 기록 › 다른 브라우저에서 가져오기에서 파일을 고르세요. Safari 내보내기 ZIP, Google 테이크아웃(Chrome) ZIP, 북마크 HTML·Bookmarks JSON, History.json을 내용으로 알아서 가립니다. 가져온 내용은 개발자에게 전송되지 않고, 앱이 받은 파일은 가져오기가 끝나면 지워집니다.</p>
 
   <h3>데이터를 지우려면 어떻게 하나요?</h3>
-  <p>설정 › 개인정보에서 방문 기록과 웹사이트 데이터(쿠키·캐시)를, 설정 › 북마크 및 기록에서 북마크를, 설정 › 암호에서 저장한 암호를, 설정 › 진단 정보에서 진단 보고서를 지울 수 있습니다. 사이트 아이콘 캐시는 방문 기록이나 웹사이트 데이터를 지울 때 함께 지워집니다. 앱을 삭제하면 앱이 기기에 저장한 데이터가 대부분 지워지지만, 저장한 암호와 동기화 로그인 토큰은 iOS 키체인 항목이라 기기에 남을 수 있습니다. 앱을 삭제하기 전에 설정 › 암호 › "모든 암호 지우기"와 설정 › 기기 간 동기화 › "동기화 데이터 지우기"를 누르세요.</p>
+  <p>설정 › 개인정보에서 방문 기록과 웹사이트 데이터(쿠키·캐시)를, 설정 › 북마크 및 기록에서 북마크를 지울 수 있습니다. 사이트 아이콘 캐시는 방문 기록이나 웹사이트 데이터를 지울 때 함께 지워집니다. 다운로드 목록의 "지우기"는 목록만 비우며, 받은 파일은 기기의 다운로드 폴더(iOS는 파일 앱)에 남으므로 파일 앱이나 다운로드 앱에서 지우세요.</p>
+  <p>앱을 삭제하면 앱이 기기에 저장한 데이터가 대부분 지워집니다.</p>
+  <ul>
+    <li>iOS: 저장한 암호와 동기화 로그인 토큰은 iOS 키체인 항목이라 기기에 남을 수 있으므로, 앱을 삭제하기 전에 설정 › 암호 › "모든 암호 지우기"와 설정 › 기기 간 동기화 › "동기화 데이터 지우기"를 누르세요. 진단 보고서는 설정 › 진단 정보에서 지웁니다.</li>
+    <li>Android: 앱 내부 데이터는 앱을 삭제하면 지워집니다. 다만 Android 자동 백업이 켜져 있으면 백업본이 Google 계정에 남아 다시 설치할 때 복원될 수 있으니, 기기 설정에서 백업을 끄거나 백업을 삭제하세요. 일반 다운로드 파일과 저장한 이미지는 공용 폴더에 있어 앱을 삭제해도 남습니다. Google 계정의 앱 연결과 드라이브 동기화 데이터는 삭제 전에 설정 › 기기 간 동기화 › "동기화 데이터 지우기"로 지우세요.</li>
+  </ul>
+
+  <h3>Android에서 다운로드한 파일은 어디에 저장되나요?</h3>
+  <p>일반 다운로드는 기기의 다운로드 폴더 안 <code>Download/TabRipple</code>에 저장되어 다운로드 앱·파일 앱에서 볼 수 있습니다. 비공개 탭에서 받은 파일은 앱 내부에만 저장되고 비공개 세션이 끝나면 지워집니다. 이미지를 저장하면 <code>Pictures/TabRipple</code>에 저장됩니다. 앱은 저장소·사진 읽기 권한을 요청하지 않습니다.</p>
+
+  <h3>화면이 캡처되지 않는 것 같습니다</h3>
+  <p>Android에서 비공개 탭이 화면에 보이는 동안에는 앱이 화면 가림(FLAG_SECURE)을 켜므로 최근 앱 화면과 스크린샷에 내용이 나타나지 않습니다. 일반 탭으로 돌아오면 해제됩니다.</p>
 
   <hr />
 
   <div lang="en">
   <h1>TabRipple Support</h1>
-  <p>TabRipple is a web browser for iPhone. The app's developer (RippleHouse) operates no server, has no sign-up, and does not collect your personal information.</p>
+  <p>TabRipple is a web browser offered as an iOS app for iPhone and an Android app. The app's developer (RippleHouse) operates no server, has no sign-up, and does not collect your personal information.</p>
   <p>Contact: <a href="mailto:support@ripplehouse.kr">support@ripplehouse.kr</a> · <a href="./">Privacy Policy</a></p>
 
   <h2>Frequently asked questions</h2>
 
-  <h3>How do I import passwords from another browser?</h3>
-  <p>In the import wizard, pick your password CSV file and choose "Import passwords too". A password file is read only if you make that choice, and after importing, the app advises you to delete the plaintext file. The file the app received is deleted when the import finishes, and imported content is not sent to the developer.</p>
-
   <h3>How do I disconnect Google Drive sync?</h3>
   <p>In Settings &gt; Cross-device sync, "Disconnect" disconnects only this device and leaves the app folder in Google Drive for your other devices. "Delete sync data" deletes everything in the app-only folder in Google Drive and revokes the access you granted the app in your Google Account. You can also revoke the connection under "Third-party apps and services" in your Google Account settings.</p>
+  <p>How the connection is kept differs by platform. On iOS the sign-in token is stored in the device keychain and may remain after you delete the app, so tap "Delete sync data" before deleting it. On Android, Google Play services handles sign-in, the app keeps no refresh token, and only a marker for the connected account is stored on the device.</p>
 
   <h3>What is not kept in a private tab?</h3>
-  <p>Pages you view in a private tab are not saved to the tab session, the archive, browsing history, the download list, or sync, and the app does not offer to save passwords. Search suggestions are not sent either. When you close the last private tab, those tabs' cookies and site data are erased.</p>
+  <p>Pages you view in a private tab are not saved to the tab session, the archive, browsing history, the download list, or sync, and search suggestions are not sent. When you close the last private tab, those tabs' cookies and site data are erased.</p>
+  <p>On Android the app creates a fresh WebView profile for each private session. Closing the last private tab erases that profile's cookies, site storage, and location permissions and empties the private download folder. While a private tab is on screen, screen protection keeps its content out of the recent-apps view and screenshots. Site permissions, text size, and blocking exceptions chosen in a private tab are not saved. On devices whose Android WebView does not support separate profiles, the app says it cannot open private tabs (updating WebView may help).</p>
+
+  <h3>Where are my saved passwords?</h3>
+  <p>On iOS, passwords the app saved are in the iOS Keychain, and you can view and delete them in Settings &gt; Passwords. If "Sync with iCloud Keychain" is on (the default), they sync end-to-end encrypted to devices signed in to the same Apple Account.</p>
+  <p>On Android the app does not store passwords. Saving and filling in logins is handled by the Android autofill service. In the app, Settings &gt; Passwords &gt; "Autofill service" opens that service's settings. To view or delete saved logins, use that service (for example, Google Password Manager). The Android app does not import password CSVs from other browsers.</p>
+
+  <h3>How do I import bookmarks and history from another browser?</h3>
+  <p>In Settings &gt; Bookmarks &amp; History &gt; Import from another browser, pick your file. The app recognizes a Safari export ZIP, a Google Takeout (Chrome) ZIP, a bookmarks HTML or Bookmarks JSON file, and History.json by content. Imported content is not sent to the developer, and the file the app received is deleted when the import finishes.</p>
 
   <h3>How do I delete my data?</h3>
-  <p>In Settings &gt; Privacy you can clear browsing history and website data (cookies and cache); in Settings &gt; Bookmarks &amp; History you can delete bookmarks; in Settings &gt; Passwords you can delete saved passwords; and in Settings &gt; Diagnostics you can delete diagnostic reports. The site icon cache is cleared along with browsing history or website data. Deleting the app removes most of the data it stored on your device, but saved passwords and the sync sign-in token are iOS Keychain items and may remain on the device. Before deleting the app, tap Settings &gt; Passwords &gt; "Delete all passwords" and Settings &gt; Cross-device sync &gt; "Delete sync data".</p>
+  <p>In Settings &gt; Privacy you can clear browsing history and website data (cookies and cache), and in Settings &gt; Bookmarks &amp; History you can delete bookmarks. The site icon cache is cleared along with browsing history or website data. "Clear" in the download list empties the list only; downloaded files remain in the device's Download folder (the Files app on iOS), so delete them in the Files app or Downloads app.</p>
+  <p>Deleting the app removes most of the data it stored on your device.</p>
+  <ul>
+    <li>iOS: saved passwords and the sync sign-in token are iOS Keychain items and may remain on the device. Before deleting the app, tap Settings &gt; Passwords &gt; "Delete all passwords" and Settings &gt; Cross-device sync &gt; "Delete sync data". Delete diagnostic reports in Settings &gt; Diagnostics.</li>
+    <li>Android: app-internal data is deleted when you uninstall the app. However, if Android automatic backup is on, a backup may remain in your Google account and be restored when you reinstall the app, so turn backup off or delete the backup in your device settings. Regular downloaded files and saved images are in shared folders and remain after you uninstall the app. Remove the app's Google account access and Drive sync data with Settings &gt; Cross-device sync &gt; "Delete sync data" before uninstalling.</li>
+  </ul>
+
+  <h3>Where do downloads go on Android?</h3>
+  <p>Regular downloads are saved in the device's Download/TabRipple folder and are visible in your Downloads app and Files app. Files downloaded in a private tab are stored only inside the app and are deleted when the private session ends. Saved images go to Pictures/TabRipple. The app does not request storage or photo-reading permissions.</p>
+
+  <h3>My screen seems to be blocked from capture</h3>
+  <p>On Android, while a private tab is on screen the app turns on screen protection (FLAG_SECURE), so its content does not appear in the recent-apps view or in screenshots. It is turned off again when you switch to a regular tab.</p>
   </div>
 </body>
 </html>
